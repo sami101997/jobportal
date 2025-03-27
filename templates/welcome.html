@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal - Welcome</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            width: 420px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            font-size: 26px;
+        }
+        p {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .btn {
+            display: inline-block;
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+            text-decoration: none;
+            font-weight: bold;
+            border: none;
+        }
+        .btn-register {
+            background: linear-gradient(to right, #ff416c, #ff4b2b);
+            color: white;
+        }
+        .btn-register:hover {
+            background: linear-gradient(to right, #ff4b2b, #ff416c);
+            box-shadow: 0px 4px 10px rgba(255, 75, 43, 0.5);
+        }
+        .btn-login {
+            background: linear-gradient(to right, #1d976c, #93f9b9);
+            color: white;
+        }
+        .btn-login:hover {
+            background: linear-gradient(to right, #93f9b9, #1d976c);
+            box-shadow: 0px 4px 10px rgba(29, 151, 108, 0.5);
+        }
+        .btn-post_job {
+            background: linear-gradient(to right, #acf15c, #ff4b2b);
+            color: white;
+        }
+        .btn-post_job:hover {
+            background: linear-gradient(to right, #1f0381, #ff416c);
+            box-shadow: 0px 4px 10px rgba(255, 75, 43, 0.5);
+        }
+        .spacer {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Welcome to the Job Portal!</h1>
+        <p>Find your dream job with ease. Connect with top companies and apply today.</p>
+        <p><b>We help you find the right opportunities.</b></p>
+        
+        <a href="{{ url_for('registration') }}" class="btn btn-register">Register Now</a>
+
+        <div class="spacer">or</div>
+        
+        <div class="spacer">Already have an account?</div>
+        
+        <a href="{{ url_for('signin') }}" class="btn btn-login">Login</a>
+
+        <div class="spacer">or</div>
+
+        <div class="spacer">Post job here</div>
+        
+        <a href="{{ url_for('post_job') }}" class="btn btn-post_job">Post Jobs</a>
+    </div>
+</body>
+</html>

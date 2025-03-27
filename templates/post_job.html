@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post a Job</title>
+    <style>
+        /* Global Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            width: 450px;
+            text-align: center;
+        }
+        h2 {
+        color: #ff6b6b;
+        text-shadow: 2px 2px 5px rgba(255, 107, 107, 0.5);
+        font-weight: bold;
+        font-size: 24px;
+            }
+        label {
+            font-weight: bold;
+            display: block;
+            text-align: left;
+            margin: 12px 0 5px;
+            color: #555;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: 0.3s ease-in-out;
+        }
+        input:focus, select:focus, textarea:focus {
+            border-color: #2575fc;
+            box-shadow: 0px 0px 8px rgba(37, 117, 252, 0.5);
+            outline: none;
+        }
+        button {
+            background: linear-gradient(to right, #ff416c, #ff4b2b);
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 18px;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 15px;
+            transition: 0.3s ease-in-out;
+            font-weight: bold;
+        }
+        button:hover {
+            background: linear-gradient(to right, #ff4b2b, #ff416c);
+            box-shadow: 0px 4px 10px rgba(255, 75, 43, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>🚀 Post a Job</h2>
+        <form method="POST" action="{{ url_for('post_job') }}">
+
+            <label for="title">Job Title</label>
+<input type="text" id="title" name="title" required>
+
+<label for="company">Company Name</label>
+<input type="text" id="company" name="company" required>
+
+<label for="job_type">Job Type</label>
+<select id="job_type" name="job_type">
+    <option value="Full-Time">Full-Time</option>
+    <option value="Part-Time">Part-Time</option>
+    <option value="Contract">Contract</option>
+    <option value="Internship">Internship</option>
+</select>
+
+<label for="salary">Salary</label>
+<input type="number" id="salary" name="salary">
+
+<label for="location">Job Location</label>
+<input type="text" id="location" name="location" required>
+
+<label for="description">Job Description</label>
+<textarea id="description" name="description" rows="4" required></textarea>
+
+<button type="submit">Post Job</button>
+</form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Details & Apply</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 500px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        .job-details {
+            text-align: left;
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: #fafafa;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin: 10px 0 5px;
+            text-align: left;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 15px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        a {
+            display: block;
+            text-decoration: none;
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Job 1 -->
+    <div class="container">
+        <h2>Job Details</h2>
+        <div class="job-details">
+            <p><strong>Job Title:</strong> Software Engineer</p>
+            <p><strong>Company:</strong> Tech Solutions Inc.</p>
+            <p><strong>Salary:</strong> $80,000 - $100,000 per year</p>
+            <p><strong>Job Type:</strong> Full-Time</p>
+            <p><strong>Location:</strong> San Francisco, CA</p>
+            <p><strong>Description:</strong> We are looking for a skilled software engineer to join our dynamic team.</p>
+        </div>
+        <a href="{{ url_for('apply') }}">Apply for this Job</a>
+    </div>
+
+    <!-- Job 2 -->
+    <div class="container">
+        <h2>Job Details</h2>
+        <div class="job-details">
+            <p><strong>Job Title:</strong> QA Tester</p>
+            <p><strong>Company:</strong> Infosys</p>
+            <p><strong>Salary:</strong> $30,000 - $80,000 per year</p>
+            <p><strong>Job Type:</strong> Full-Time</p>
+            <p><strong>Location:</strong> New York, USA</p>
+            <p><strong>Description:</strong> We are looking for a fresher QA tester to join our dynamic team.</p>
+        </div>
+        <h2>Apply for this Job</h2>
+        <form method="POST" action="{{ url_for('apply') }}">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="resume">Upload Resume</label>
+            <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+
+            <label for="cover_letter">Cover Letter</label>
+            <textarea id="cover_letter" name="cover_letter" rows="4" required></textarea>
+
+            <button type="submit">Submit Application</button>
+        </form>
+    </div>
+
+    <!-- Job 3 -->
+    <div class="container">
+        <h2>Job Details</h2>
+        <div class="job-details">
+            <p><strong>Job Title:</strong> Java Developer</p>
+            <p><strong>Company:</strong> EY</p>
+            <p><strong>Salary:</strong> $100,000 - $200,000 per year</p>
+            <p><strong>Job Type:</strong> Full-Time</p>
+            <p><strong>Location:</strong> England, UK</p>
+            <p><strong>Description:</strong> We are looking for a fresher Java Developer to join our team.</p>
+        </div>
+        <h2>Apply for this Job</h2>
+        <form method="POST" action="{{ url_for('apply') }}">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="resume">Upload Resume</label>
+            <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+
+            <label for="cover_letter">Cover Letter</label>
+            <textarea id="cover_letter" name="cover_letter" rows="4" required></textarea>
+
+            <button type="submit">Submit Application</button>
+        </form>
+    </div>
+
+    <!-- Job 4 -->
+    <div class="container">
+        <h2>Job Details</h2>
+        <div class="job-details">
+            <p><strong>Job Title:</strong> Python Developer</p>
+            <p><strong>Company:</strong> Orix Corp.</p>
+            <p><strong>Salary:</strong> $30,000 - $80,000 per year</p>
+            <p><strong>Job Type:</strong> Full-Time</p>
+            <p><strong>Location:</strong> Japan</p>
+            <p><strong>Description:</strong> We are looking for a fresher Python Developer to join our team.</p>
+        </div>
+        <h2>Apply for this Job</h2>
+        <form method="POST" action="{{ url_for('apply') }}">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="resume">Upload Resume</label>
+            <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+
+            <label for="cover_letter">Cover Letter</label>
+            <textarea id="cover_letter" name="cover_letter" rows="4" required></textarea>
+
+            <button type="submit">Submit Application</button>
+        </form>
+    </div>
+
+</body>
+</html>
